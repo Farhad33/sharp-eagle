@@ -2,25 +2,38 @@
 
 ## Description
 
-Complete a to do list app.
+Complete a todo list app.
 
 ![Alt text](./src/images/todo-list.png)
 
 ## Specifications
 
-#### User Stories:
-
-- [ ] Create to do list items.
-- [ ] Delete unwanted to do list items.
+- [ ] React Resource page
+- [ ] Redux Resource page
 - [ ] Check items off as completed.
-- [ ] Edit the text on existing to do's.
-- [ ] Follow good Git team behaviors (do all your work on branches & submit pull requests for review before merging to master)
+- [ ] SPA, one user only:
+      - view todos
+      - add todos
+      - delete todos
+      - edit todos
+
+- [ ] Filter:
+      - all
+      - active
+      - completed
+
+## Quality Rubric
+
+- [x] Linting
+- [ ] Good Git Flow( Feature Branches, PR's ).
+- [ ] Clean code
+- [ ] Components adhere to SRP
+- [ ] ES6
+- [ ] Using issues to specify tasks
+
+---
 
 - [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
-
-#### Stretch Goals:
-- [ ] Write the app using ES6 and compile using babel.
-- [ ] Dynamic input on edit (input appears when todo is clicked ).
 
 ---
 
