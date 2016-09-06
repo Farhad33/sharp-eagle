@@ -4,6 +4,8 @@
 
 Complete a to do list app.
 
+![Alt text](./src/images/todo-list.png)
+
 ## Specifications
 
 #### User Stories:
