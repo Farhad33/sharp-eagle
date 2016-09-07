@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
 
-import Todo from './Todo'
+import Header from './components/Header'
+import Todo from './components/Todo'
 
 import addTodo from './actions/todos'
 
 class App extends Component {
-  addTodo() {
-    this.props.dispatch( addTodo( 'This is a todo' ))
+  createTodo( title ) {
+    this.props.dispatch( addTodo( title ))
   }
 
   todoItems() {
@@ -24,14 +25,9 @@ class App extends Component {
       <div className="learn">
         <section className="todoapp">
 
-          <header className="header">
-            <h1>todos</h1>
-            <input className="new-todo" placeholder="What needs to be done?" value="" />
-          </header>
-
+          <Header addTodo={this.createTodo.bind(this)} />
 
           <section className="main">
-            <a href="#" onClick={this.addTodo.bind(this)}>Add</a>
             <input className="toggle-all" type="checkbox" />
             <ul className="todo-list">
               {this.todoItems()}
@@ -41,7 +37,7 @@ class App extends Component {
 
           <footer className="footer">
             <span className="todo-count">
-              <strong>0</strong>
+              <strong>{this.props.todos.length}</strong>
               <span> </span>
               <span>items </span>
               <span >left</span>

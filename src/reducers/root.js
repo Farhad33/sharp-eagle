@@ -1,6 +1,8 @@
-import { ADD_TODO } from '../actions/todos'
+import { ADD_TODO, COMPLETED } from '../actions/todos'
+
 
 const DEFAULT_STATE = {
+  statusForToggle: COMPLETED,
   todos: [{ title: 'espn', completed: false }, { title: 'hi', completed: true }]
 }
 
