@@ -37,7 +37,7 @@ class App extends Component {
 
           <footer className="footer">
             <span className="todo-count">
-              <strong>0</strong>
+              <strong>{this.props.todos.length}</strong>
               <span> </span>
               <span>items </span>
               <span >left</span>
