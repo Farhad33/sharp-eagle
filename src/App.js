@@ -12,14 +12,11 @@ class App extends Component {
   }
 
   todoItems() {
-    return this.props.todos.map( (todo, index) => {
-      return <Todo key={`todo-${index}`} {...todo} />
-    })
+    const { todos } = this.props
 
-
-    // return this.props.todos.map( (todo, index) => { 
-    //   return ( <Todo key={`todo-${index}`} todo={todo} /> )
-    // })
+    return todos.map( (todo, index) =>
+      <Todo key={`todo-${index}`} {...todo} />
+    )
   }
 
   render() {
