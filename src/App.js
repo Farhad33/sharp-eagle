@@ -28,7 +28,6 @@ class App extends Component {
           <Header addTodo={this.createTodo.bind(this)} />
 
           <section className="main">
-            <a href="#" onClick={this.createTodo.bind(this)}>Add</a>
             <input className="toggle-all" type="checkbox" />
             <ul className="todo-list">
               {this.todoItems()}
