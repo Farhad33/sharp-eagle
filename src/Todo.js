@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 
-import addTodo from './actions/todos'
-
 class Todo extends Component {
-  addTodo() {
-    this.props.dispatch( addTodo( 'This is a todo' ))
-  }
-
   render() {
     return (
-      <div className="Todo">
-            
-      </div>
+      <li>
+        <div className="view">
+          <input className="toggle" type="checkbox" />
+            <label>{this.props.title}</label>
+          <button className="destroy"></button>
+        </div>
+      </li>  
     )
   }
 }
-
+ 
 export default Todo

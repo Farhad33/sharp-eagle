@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
 
+import Todo from './Todo'
+
 import addTodo from './actions/todos'
 
 class App extends Component {
@@ -9,16 +11,12 @@ class App extends Component {
     this.props.dispatch( addTodo( 'This is a todo' ))
   }
 
-  todoItem() {    
-    return this.props.todos.map( (todo, index) => { 
-      return ( <li key={`todo-${index}`}>
-        <div className="view">
-          <input className="toggle" type="checkbox" />
-          <label>{todo.title}</label>
-          <button className="destroy"></button>
-        </div>
-      </li> )
-    })
+  todoItems() {
+    const { todos } = this.props
+
+    return todos.map( (todo, index) =>
+      <Todo key={`todo-${index}`} {...todo} />
+    )
   }
 
   render() {
@@ -36,7 +34,7 @@ class App extends Component {
             <a href="#" onClick={this.addTodo.bind(this)}>Add</a>
             <input className="toggle-all" type="checkbox" />
             <ul className="todo-list">
-              {this.todoItem()}
+              {this.todoItems()}
             </ul>
           </section>
 
