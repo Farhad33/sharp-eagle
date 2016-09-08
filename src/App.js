@@ -5,18 +5,28 @@ import './App.css'
 import Header from './components/Header'
 import Todo from './components/Todo'
 
-import addTodo from './actions/todos'
+import { addTodo, toggleTodo, deleteTodo } from './actions/todos'
 
 class App extends Component {
   createTodo( title ) {
-    this.props.dispatch( addTodo( title ))
+    this.props.dispatch( addTodo( title ) )
+  }
+
+  toggleTodo( id ) {
+    this.props.dispatch( toggleTodo( id ))
+  }
+
+  deleteTodo( id ) {
+    this.props.dispatch( deleteTodo( id ))
   }
 
   todoItems() {
     const { todos } = this.props
 
     return todos.map( (todo, index) =>
-      <Todo key={`todo-${index}`} {...todo} />
+      <Todo key={`todo-${index}`} {...todo} 
+        toggleTodo={this.toggleTodo.bind(this)} 
+        deleteTodo={this.deleteTodo.bind(this)} />
     )
   }
 
