@@ -3,9 +3,12 @@ import { connect } from 'react-redux'
 import './App.css'
 
 import Header from './components/Header'
-import Todo from './components/Todo'
+import TodoList from './components/TodoList'
+import Footer from './components/Footer'
 
-import { addTodo, toggleTodo, deleteTodo } from './actions/todos'
+import {
+  addTodo, toggleTodo, deleteTodo, changeFilter, ALL
+} from './actions/todos'
 
 class App extends Component {
   createTodo( title ) {
@@ -20,56 +23,29 @@ class App extends Component {
     this.props.dispatch( deleteTodo( id ))
   }
 
-  todoItems() {
-    const { todos } = this.props
-
-    return todos.map( (todo, index) =>
-      <Todo key={`todo-${index}`} {...todo} 
-        toggleTodo={this.toggleTodo.bind(this)} 
-        deleteTodo={this.deleteTodo.bind(this)} />
-    )
+  changeFilter( filter ) {
+    this.props.dispatch( changeFilter( filter ))
   }
 
   render() {
+    const { todos: allTodos, currentFilter } = this.props
+    const todos = allTodos.filter( todo =>
+      currentFilter === ALL || todo.status === currentFilter
+    )
+
     return (
       <div className="learn">
         <section className="todoapp">
-
           <Header addTodo={this.createTodo.bind(this)} />
 
-          <section className="main">
-            <input className="toggle-all" type="checkbox" />
-            <ul className="todo-list">
-              {this.todoItems()}
-            </ul>
-          </section>
+          <TodoList todos={todos}
+            toggleTodo={this.toggleTodo.bind(this)}
+            deleteTodo={this.deleteTodo.bind(this)} />
 
-
-          <footer className="footer">
-            <span className="todo-count">
-              <strong>{this.props.todos.length}</strong>
-              <span> </span>
-              <span>items </span>
-              <span >left</span>
-            </span>
-            <ul className="filters">
-              <li>
-                <a href="#/" className="selected">All</a>
-              </li>
-              <span></span>
-              <li>
-                <a href="#/active" className="">Active</a>
-              </li>
-              <span></span>
-              <li>
-                <a href="#/completed" className="">Completed</a>
-              </li>
-            </ul>
-              <button className="clear-completed">Clear completed</button>
-          </footer>
-
+          <Footer count={todos.length}
+            currentFilter={currentFilter}
+            changeFilter={this.changeFilter.bind(this)} />
         </section>
-
       </div>
     )
   }

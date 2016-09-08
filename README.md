@@ -16,7 +16,7 @@ Complete a todo list app.
       - add todos
       - delete todos
       - edit todos
-- [ ] Filter:
+- [x] Filter:
       - all
       - active
       - completed

@@ -1,9 +1,11 @@
+export const ALL = 'all'
 export const ACTIVE = 'active'
 export const COMPLETED = 'completed'
 
 export const ADD_TODO = 'add_todo'
 export const TOGGLE_TODO = 'toggle_todo'
 export const DELETE_TODO = 'delete_todo'
+export const CHANGE_FILTER = 'change_filter'
 
 const addTodo = title => {
   return {
@@ -27,4 +29,11 @@ const deleteTodo = id => {
   }
 }
 
-export { addTodo, toggleTodo, deleteTodo }
+const changeFilter = filter => {
+  return {
+    type: CHANGE_FILTER,
+    filter
+  }
+}
+
+export { addTodo, toggleTodo, deleteTodo, changeFilter }
