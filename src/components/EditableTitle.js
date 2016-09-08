@@ -30,7 +30,7 @@ export default class EditableTitle extends Component {
 
     if( this.state.editing ) {
       return (
-        <input className="editing"
+        <input className="edit"
           value={this.state.value}
           onKeyPress={this.onKeyPress.bind(this)}
           onChange={this.onChange.bind(this)} />
