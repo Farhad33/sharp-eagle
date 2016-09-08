@@ -1,11 +1,12 @@
 import {
-  ADD_TODO, TOGGLE_TODO, DELETE_TODO, CHANGE_FILTER
+  ADD_TODO, TOGGLE_TODO, DELETE_TODO, CHANGE_FILTER, EDIT_TITLE
 } from '../actions/todos'
 
 import addTodo from './addTodo'
 import toggleTodo from './toggleTodo'
 import deleteTodo from './deleteTodo'
 import changeFilter from './changeFilter'
+import editTitle from './editTitle'
 
 import DEFAULT_STATE from './defaultState'
 
@@ -21,6 +22,8 @@ const root = (state=DEFAULT_STATE, action) => {
       return deleteTodo( state, action )
     case CHANGE_FILTER:
       return changeFilter( state, action )
+    case EDIT_TITLE:
+      return editTitle( state, action )
     default:
       return state
   }

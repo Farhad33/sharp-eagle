@@ -11,7 +11,7 @@ Complete a todo list app.
 - [ ] React Resource page
 - [ ] Redux Resource page
 - [x] Check items off as completed
-- [ ] SPA, one user only:
+- [x] SPA, one user only:
       - view todos
       - add todos
       - delete todos

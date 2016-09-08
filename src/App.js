@@ -7,7 +7,7 @@ import TodoList from './components/TodoList'
 import Footer from './components/Footer'
 
 import {
-  addTodo, toggleTodo, deleteTodo, changeFilter, ALL
+  addTodo, toggleTodo, deleteTodo, changeFilter, editTitle, ALL
 } from './actions/todos'
 
 class App extends Component {
@@ -27,6 +27,10 @@ class App extends Component {
     this.props.dispatch( changeFilter( filter ))
   }
 
+  editTitle( id, title ) {
+    this.props.dispatch( editTitle( id, title ))
+  }
+
   render() {
     const { todos: allTodos, currentFilter } = this.props
     const todos = allTodos.filter( todo =>
@@ -39,6 +43,7 @@ class App extends Component {
           <Header addTodo={this.createTodo.bind(this)} />
 
           <TodoList todos={todos}
+            editTitle={this.editTitle.bind(this)}
             toggleTodo={this.toggleTodo.bind(this)}
             deleteTodo={this.deleteTodo.bind(this)} />
 
