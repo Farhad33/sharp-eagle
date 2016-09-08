@@ -25,9 +25,9 @@ Complete a todo list app.
 
 - [x] Linting
 - [x] Good Git Flow( Feature Branches, PR's ).
-- [ ] Clean code
-- [ ] Components adhere to SRP
-- [ ] ES6
+- [x] Clean code
+- [x] Components adhere to SRP
+- [x] ES6
 - [x] Using issues to specify tasks
 
 ---
