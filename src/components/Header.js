@@ -22,11 +22,10 @@ export default class Header extends Component {
       <header>
         <h1>todos</h1>
         <input className="new-todo" 
-          placeholder="What needs to be done?" 
+          placeholder="What needs to be done?"
           value={this.state.value}
           onKeyPress={this.onKeyPress.bind(this)}
-          onChange={this.onChange.bind(this)}
-        />
+          onChange={this.onChange.bind(this)} />
       </header>
     )
   }

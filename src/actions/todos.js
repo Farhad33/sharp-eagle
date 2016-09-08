@@ -6,6 +6,7 @@ export const ADD_TODO = 'add_todo'
 export const TOGGLE_TODO = 'toggle_todo'
 export const DELETE_TODO = 'delete_todo'
 export const CHANGE_FILTER = 'change_filter'
+export const EDIT_TITLE = 'edit_title'
 
 const addTodo = title => {
   return {
@@ -36,4 +37,12 @@ const changeFilter = filter => {
   }
 }
 
-export { addTodo, toggleTodo, deleteTodo, changeFilter }
+const editTitle = (id, title) => {
+  return {
+    type: EDIT_TITLE,
+    id,
+    title
+  }
+}
+
+export { addTodo, toggleTodo, deleteTodo, changeFilter, editTitle }

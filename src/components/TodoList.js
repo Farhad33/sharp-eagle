@@ -3,10 +3,11 @@ import Todo from './Todo'
 
 export default class TodoList extends Component {
   todoItems() {
-    const { todos, toggleTodo, deleteTodo } = this.props
+    const { todos, toggleTodo, deleteTodo, editTitle } = this.props
 
     return todos.map( (todo, index) =>
       <Todo key={`todo-${index}`} {...todo}
+        editTitle={editTitle}
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo} />
     )
