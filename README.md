@@ -10,7 +10,7 @@ Complete a todo list app.
 
 - [ ] React Resource page
 - [ ] Redux Resource page
-- [ ] Check items off as completed
+- [x] Check items off as completed
 - [ ] SPA, one user only:
       - view todos
       - add todos
@@ -24,11 +24,11 @@ Complete a todo list app.
 ## Quality Rubric
 
 - [x] Linting
-- [ ] Good Git Flow( Feature Branches, PR's ).
-- [ ] Clean code
-- [ ] Components adhere to SRP
-- [ ] ES6
-- [ ] Using issues to specify tasks
+- [x] Good Git Flow( Feature Branches, PR's ).
+- [x] Clean code
+- [x] Components adhere to SRP
+- [x] ES6
+- [x] Using issues to specify tasks
 
 ---
 
