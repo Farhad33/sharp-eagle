@@ -34,7 +34,8 @@ export default class Footer extends Component {
           </li>
         </ul>
 
-        <button className="clear-completed">Clear completed</button>
+        <button className="clear-completed"
+          onClick={this.props.clearCompleted}>Clear completed</button>
       </footer>
     )
   }
