@@ -8,6 +8,7 @@ export const DELETE_TODO = 'delete_todo'
 export const CHANGE_FILTER = 'change_filter'
 export const EDIT_TITLE = 'edit_title'
 export const CLEAR_COMPLETED = 'clear_completed'
+export const TOGGLE_ALL = 'toggle-all'
 
 const addTodo = title => ({
   type: ADD_TODO,
@@ -40,4 +41,9 @@ const clearCompleted = () => ({
   type: CLEAR_COMPLETED
 })
 
-export { addTodo, toggleTodo, deleteTodo, changeFilter, editTitle, clearCompleted }
+const toggleAll = status => ({
+  type: TOGGLE_ALL,
+  status
+})
+
+export { addTodo, toggleTodo, deleteTodo, changeFilter, editTitle, clearCompleted, toggleAll }

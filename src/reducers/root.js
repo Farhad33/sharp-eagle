@@ -1,5 +1,5 @@
 import {
-  ADD_TODO, TOGGLE_TODO, DELETE_TODO, CHANGE_FILTER, EDIT_TITLE, CLEAR_COMPLETED
+  ADD_TODO, TOGGLE_TODO, DELETE_TODO, CHANGE_FILTER, EDIT_TITLE, CLEAR_COMPLETED, TOGGLE_ALL
 } from '../actions/todos'
 
 import addTodo from './addTodo'
@@ -8,10 +8,9 @@ import deleteTodo from './deleteTodo'
 import changeFilter from './changeFilter'
 import editTitle from './editTitle'
 import clearCompleted from './clearCompleted'
+import toggleAll from './toggleAll'
 
-import DEFAULT_STATE from './defaultState'
-
-const root = (state=DEFAULT_STATE, action) => {
+const root = (state, action) => {
   console.log( action, state )
 
   switch( action.type ) {
@@ -27,6 +26,8 @@ const root = (state=DEFAULT_STATE, action) => {
       return editTitle( state, action )
     case CLEAR_COMPLETED:
       return clearCompleted( state, action )
+    case TOGGLE_ALL:
+      return toggleAll( state, action )
     default:
       return state
   }

@@ -6,22 +6,25 @@ import reducer from './reducers/root'
 
 import App from './App'
 import './index.css'
+import DEFAULT_STATE from './reducers/defaultState'
 
 const DATABASE = 'sharp-eagle'
 
 const localStorage = ({ getState }) => next => action => {
   const result = next(action)
-  window.localStorage.setItem( DATABASE, JSON.stringify( getState() ))
+  const state = getState()
+
+  if( state !== null ) {
+    window.localStorage.setItem( DATABASE, JSON.stringify( state ))
+  }
+
   return result
 }
 
-const initialState = JSON.parse( window.localStorage.getItem( DATABASE ))
+const localData = window.localStorage.getItem( DATABASE )
+const initialState = JSON.parse( localData ) || DEFAULT_STATE
 
-if (initialState === null) {
-  var store = createStore( reducer )
-}else {
-  var store = createStore( reducer, initialState, applyMiddleware( localStorage ))
-}
+const store = createStore( reducer, initialState, applyMiddleware( localStorage ))
 
 ReactDOM.render(
   <Provider store={store}>
