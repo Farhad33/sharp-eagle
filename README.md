@@ -7,9 +7,10 @@ Complete a todo list app.
 ![Alt text](./src/images/todo-list.png)
 
 ## Specifications
+- [X] [chunk](./lib/chunk.js)
 
-- [x] React Resource page
-- [x] Redux Resource page
+- [x] [React Resource page](/STACK.md)
+- [x] [Redux Resource page](/STACK.md)
 - [x] Check items off as completed
 - [x] SPA, one user only:
       - view todos
