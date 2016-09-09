@@ -11,15 +11,17 @@ const DATABASE = 'sharp-eagle'
 
 const localStorage = ({ getState }) => next => action => {
   const result = next(action)
-
   window.localStorage.setItem( DATABASE, JSON.stringify( getState() ))
-
   return result
 }
 
 const initialState = JSON.parse( window.localStorage.getItem( DATABASE ))
 
-const store = createStore( reducer, initialState, applyMiddleware( localStorage ))
+if (initialState === null) {
+  var store = createStore( reducer )
+}else {
+  var store = createStore( reducer, initialState, applyMiddleware( localStorage ))
+}
 
 ReactDOM.render(
   <Provider store={store}>
