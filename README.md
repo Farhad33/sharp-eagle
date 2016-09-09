@@ -8,8 +8,8 @@ Complete a todo list app.
 
 ## Specifications
 
-- [ ] React Resource page
-- [ ] Redux Resource page
+- [x] React Resource page
+- [x] Redux Resource page
 - [x] Check items off as completed
 - [x] SPA, one user only:
       - view todos

@@ -2,7 +2,7 @@
 
 Redux and React is a different way of thinking about applications.
 The data flow is really unique and how to think of it, Redux handles
-data flow and state, React handles rendering and events. React would be the "View"
+data flow and state, React handles rendering and emit events. React would be the "View"
 in a typical MVC model and Redux we still don't know were this fits in to that way
 of thinking MVC or even if it should. This week we tried to come up with the
 simplest of applications so we could maximize for learning and quality,
